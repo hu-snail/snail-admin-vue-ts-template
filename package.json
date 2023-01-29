@@ -1,0 +1,87 @@
+{
+  "name": "snail-admin-vue-ts-template",
+  "private": true,
+  "version": "0.0.0",
+  "description": "snail-admin-pro 开箱即用的中后台管理平台",
+  "keywords": [
+    "vue3",
+    "vue3-admin",
+    "admin",
+    "snail-pro",
+    "admin-pro"
+  ],
+  "author": "hu-snail",
+  "email": "1217437592@qq.com",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "clean:cache": "rm -rf node_modules && rm -rf .eslintcache && pnpm install",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock,build}/**/*.{vue,js,ts,tsx}\" --fix",
+    "lint:prettier": "prettier --write  \"src/**/*.{js,ts,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,css,scss,postcss,less}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
+    "lint:pretty": "pretty-quick --staged",
+    "lint": "pnpm lint:eslint && pnpm lint:prettier && pnpm lint:stylelint",
+    "prepare": "husky install",
+    "preinstall": "npx only-allow pnpm",
+    "commit": "git-cz"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx,jsx,vue}": [
+      "eslint --fix",
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "dependencies": {
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "commitizen": "^4.2.4",
+    "commitlint": "^17.0.3",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.7.0",
+    "eslint": "^8.8.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^9.7.0",
+    "husky": "^7.0.4",
+    "lint-staged": "11.1.2",
+    "postcss": "^8.4.21",
+    "postcss-html": "^1.5.0",
+    "postcss-import": "^15.1.0",
+    "postcss-scss": "^4.0.6",
+    "prettier": "^2.5.1",
+    "pretty-quick": "3.1.1",
+    "stylelint": "^14.3.0",
+    "stylelint-config-html": "^1.0.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^2.4.0",
+    "stylelint-config-recommended": "^9.0.0",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-order": "^5.0.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vue-eslint-parser": "^9.1.0",
+    "vue-tsc": "^1.0.11"
+  }
+}
